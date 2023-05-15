@@ -2,6 +2,8 @@
 
 use Illuminate\Routing\Router;
 use Illuminate\Support\Facades\Route;
+use App\Admin\Controllers\BannerController;
+
 use Dcat\Admin\Admin;
 
 Admin::routes();
@@ -13,5 +15,11 @@ Route::group([
 ], function (Router $router) {
 
     $router->get('/', 'HomeController@index');
+    
+    Route::resource('banner', BannerController::class);
+
+
+
+    
 
 });
